@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TextAnalyser": {
+      "commandName": "Project",
+      "commandLineArgs": "D:\\Projects\\TextAnalyserApp\\TextAnalyser\\TextFiles\\TEXT.txt"
+    }
+  }
+}
