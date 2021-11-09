@@ -1,2 +1,2 @@
-# TextAnal-serApp
+# TextAnalyserApp
 A simple application for analysing text
