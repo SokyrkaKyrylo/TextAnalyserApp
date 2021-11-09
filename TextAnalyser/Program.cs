@@ -24,6 +24,11 @@ namespace TextAnalyser
                 Console.Write("Enter a word to see in which lines it is: ");
                 string word = Console.ReadLine();  
                 var resultInfo = textAnaylser.GetInfoAboutWord(word);
+                if (resultInfo is null)
+                {
+                    Console.WriteLine("This word doesn't present in text ^(");
+                    continue;
+                } 
                 foreach (var res in resultInfo)
                 {
                     Console.WriteLine(res);
