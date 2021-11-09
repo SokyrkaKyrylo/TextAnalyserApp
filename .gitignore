@@ -331,3 +331,16 @@ ASALocalRun/
 .mfractor/
 
 .gitignore.txt
+*.cache
+*.cache
+TextAnalyser/obj/Debug/net5.0/TextAnalyser.AssemblyInfo.cs
+TextAnalyser/obj/project.nuget.cache
+TextAnalyser/obj/TextAnalyser.csproj.nuget.dgspec.json
+TextAnalyser/obj/project.assets.json
+TextAnalyser/obj/Debug/net5.0/TextAnalyser.csproj.AssemblyReference.cache
+*.json
+TextAnalyser/obj/TextAnalyser.csproj.nuget.g.props
+TextAnalyser/obj/TextAnalyser.csproj.nuget.g.targets
+TextAnalyser/obj/TextAnalyser.csproj.nuget.g.targets
+TextAnalyser/obj/TextAnalyser.csproj.nuget.g.props
+*.json

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Gv56ykiM8B/H5HEVrp3pcFWwYr60k7Z1Ew1vvQaZ6zMuigkZuDlh70ZkKZz8+NnWV0T0hn7rEGOK54oVImnxFw==",
+  "dgSpecHash": "5CZQbPPt0XEDVnCEVg0M7cqIEcuS6kWKl8ZeHzWbWuW0M8ef5UY0WSkBtEEt8SjZBiIcjXbjVfbYUGg+za9JGw==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\TextAnalyserApp\\TextAnalyser\\TextAnalyser.csproj",
+  "projectFilePath": "C:\\Users\\kyrylo.sokyrka\\TextAnalyserApp\\TextAnalyser\\TextAnalyser.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

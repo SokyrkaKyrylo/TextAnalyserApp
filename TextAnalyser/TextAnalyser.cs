@@ -13,14 +13,14 @@ namespace TextAnalyser
     {      
         public IEnumerable<Word> Words  { get; private set; }
 
-        private ITextWorker _textWorker;
+        private readonly ITextWorker _textWorker;
 
-        private ILineWorker _sentanceWorker;
+        private readonly ILineWorker _lineWorker;
 
-        public TextAnalyser(ITextWorker textWorker, ILineWorker sentanceWorker)
+        public TextAnalyser(ITextWorker textWorker, ILineWorker lineWorker)
         {
             _textWorker = textWorker;
-            _sentanceWorker = sentanceWorker;
+            _lineWorker = lineWorker;
         }
 
         public IEnumerable<Word> AnalyseText(string filename)
@@ -34,11 +34,11 @@ namespace TextAnalyser
 
         public IEnumerable<string> GetInfoAboutWord(string wordToFound)
         {
-            var word = Words.Where(w => w.Value.Equals(wordToFound)).FirstOrDefault();
+            var word = Words.FirstOrDefault(w => w.Value.Equals(wordToFound));
             if (word is null)
                 return null;
 
-            return _sentanceWorker.ProcessLines(word);
+            return _lineWorker.ProcessLines(word);
         }
 
     }

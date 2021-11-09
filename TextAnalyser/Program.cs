@@ -9,11 +9,11 @@ namespace TextAnalyser
         static void Main(string[] args)
         {
             ITextWorker textWorker = new TextWorker();
-            ILineWorker sentanceWorker = new LineWorker();
-            var textAnaylser = new TextAnalyser(textWorker, sentanceWorker);
+            ILineWorker lineWorker = new LineWorker();
+            var textAnalyser = new TextAnalyser(textWorker, lineWorker);
 
             Console.WriteLine("Analysing textFile: " + args[0]);
-            var words = textAnaylser.AnalyseText(args[0]);
+            var words = textAnalyser.AnalyseText(args[0]);
             foreach (var word in words)
             {
                 Console.WriteLine($"Word \"{word.Value}\" was in text {word.Count} times");
@@ -23,7 +23,7 @@ namespace TextAnalyser
             {
                 Console.Write("Enter a word to see in which lines it is: ");
                 string word = Console.ReadLine();  
-                var resultInfo = textAnaylser.GetInfoAboutWord(word);
+                var resultInfo = textAnalyser.GetInfoAboutWord(word);
                 if (resultInfo is null)
                 {
                     Console.WriteLine("This word doesn't present in text ^(");
