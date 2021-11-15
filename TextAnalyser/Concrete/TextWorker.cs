@@ -12,11 +12,9 @@ namespace TextAnalyser
     {
         private IEnumerable<string> GetLines(string fileName)
         {
-            using (var sr = new StreamReader(fileName))
-            {
+            using var sr = new StreamReader(fileName);
                 while (sr.Peek() >= 0)
                     yield return sr.ReadLine();
-            }
         }
 
         public IEnumerable<Word> ProcessText(string filename)
@@ -28,8 +26,8 @@ namespace TextAnalyser
                 foreach (var word in words)
                 {
                     var tempWord = Regex.Replace(word, @"\W", "");
-                    var wordExits = allWords.FirstOrDefault(w => w.Value.Equals(tempWord));
-                    if (wordExits is null)
+                    var wordExist = allWords.FirstOrDefault(w => w.Value.Equals(tempWord));
+                    if (wordExist is null)
                     {
                         allWords.Add(new Word
                         {
@@ -43,9 +41,9 @@ namespace TextAnalyser
                     }
                     else
                     {
-                        wordExits.Count += 1;
-                        if (!wordExits.Lines.Contains(line))
-                            wordExits.Lines.Add(line);
+                        wordExist.Count += 1;
+                        if (!wordExist.Lines.Contains(line))
+                            wordExist.Lines.Add(line);
                     }
                 }
             }
