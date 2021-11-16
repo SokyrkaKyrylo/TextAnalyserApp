@@ -15,20 +15,21 @@ namespace TextAnalyser.Concrete
             var info = new List<string>();
             foreach (var line in word.Lines)
             {
-                info.Add($"Word {word.Value} on pos " +
-                    $"{String.Join(", ", GetPositionInSentance(line.ToLower(), word.Value.ToLower()))} in line {line}");
+                info.Add($"Word '{word.Value}' on pos " +
+                    $"{String.Join(", ", GetPositionInLine(line.Value.ToLower(), word.Value.ToLower()))} in line number:{line.LineNumber} " +
+                    $"\n|{line.Value}");
             }
             return info;
         }
 
-        private int[] GetPositionInSentance(string sentance, string word)
+        private int[] GetPositionInLine(string line, string word)
         {
             var list = new List<int>();
             int pos;
-            while ((pos = sentance.IndexOf(word)) != -1)
+            while ((pos = line.IndexOf(word, StringComparison.Ordinal)) != -1)
             {
                 list.Add(pos);
-                sentance = sentance.Remove(0, pos+word.Length);
+                line = line.Remove(0, pos+word.Length);
             }
             return list.ToArray();  
         }

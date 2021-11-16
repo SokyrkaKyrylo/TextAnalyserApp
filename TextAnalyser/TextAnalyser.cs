@@ -28,7 +28,7 @@ namespace TextAnalyser
             if (!File.Exists(filename))
                 throw new FileNotFoundException();
 
-            Words = _textWorker.ProcessText(filename);
+            Words = _textWorker.ProcessText(filename).OrderByDescending(w => w.Count);
             return Words;
         }
 

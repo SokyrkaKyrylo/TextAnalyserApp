@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace TextAnalyser.Models
 {
-    internal class Word
+    class Line
     {
+        public int LineNumber { get; set; }
+
         public string Value { get; set; }
-        public int Count { get; set; }       
-        public List<Line> Lines { get; set; }
     }
 }
